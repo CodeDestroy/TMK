@@ -1,0 +1,381 @@
+
+@font-face {
+font-family: 'BitterPro';
+ src: url(\resources\fonts\BitterPro-Regular.ttf) ;
+}
+
+
+
+
+@media (min-width: 280px) {
+.navbar {
+    width: 100%!important;
+}
+.header-logo {
+    width: 125px;
+    max-height: auto;
+}
+.nav-link, .header-link {
+    text-align: center;
+color: #fff!important;
+font-size: 1em;
+font-family: BitterPro;
+font-weight: 300;
+text-decoration: none!important ; 
+}
+.nav-link:active, .header-link:active {
+    text-align: center;
+color: #fff!important;
+font-size: 1em;
+font-family: BitterPro;
+font-weight: 300;
+text-decoration: none!important; 
+}
+.main-pic_text {
+font-size: 1.5em;
+}
+.content_text {
+    font-size: 0.95em;
+}
+.main-title {
+font-size: 1.25em;
+}
+.news_title, .news_date {
+    font-size: 1em;
+}
+.news_text {
+     font-size:0.8em;
+}
+.news-main_title {
+    font-size: 1.25em;
+}
+.part_title {
+    color: white;
+    background-color: #dc3545;
+    width: 10em;
+    line-height: 3em;
+    text-align: center;
+     font-family: BitterPro;
+      font-weight: 800;
+      font-size: 1em;
+      margin: 0 auto;
+       border-radius: 0.25em;
+}
+.part_footer {
+    
+    color: white;
+    background-color: #dc3545;
+    width: 100%;
+    line-height: 2.5em;
+
+     font-family: BitterPro;
+            font-size: 0.9em;
+      margin: 0 auto;
+       border-radius: 0.25em;
+}
+.footer_li_el, .footer_li_el:hover {
+    text-decoration: none;
+    color: white;
+}
+ .c1 {
+        margin: 0 auto!important;
+    }
+
+    .news-img, .news-cont {
+  width: 100%;
+}
+
+}
+
+
+@media (min-width: 600px) {
+.navbar {
+    width: 100%!important;
+}
+.header-logo {
+    width: 124px;
+    max-height: auto;
+}
+
+.nav-link, .header-link {
+color: #fff!important;
+font-family: BitterPro;
+font-size: 0.8em;
+font-weight: 300;
+text-decoration: none!important ; 
+}
+.nav-link:active, .header-link:active {
+font-size: 0.8em;
+color: #fff!important;
+font-family: BitterPro;
+font-weight: 300;
+text-decoration: none!important; 
+}
+.main-pic_text {
+font-size: 2em;
+}
+
+} 
+
+@media (min-width: 1024px) {
+    .c1 {
+        margin-top: calc(-1 * var(--bs-gutter-y))!important;
+    }
+.navbar {
+    width: unset!important;
+}
+.header-logo {
+    width: 150px;
+    max-height: auto;
+}
+
+.nav-link, .header-link {
+color: #fff!important;
+font-size: 1.25em;
+font-family: BitterPro;
+font-weight: 300;
+text-decoration: none!important ; 
+}
+.nav-link:active, .header-link:active {
+color: #fff!important;
+font-size: 1.25em;
+font-family: BitterPro;
+font-weight: 300;
+text-decoration: none!important; 
+}
+.main-pic_text {
+font-size: 3em;
+}
+
+.main-title {
+font-size: 2em;
+}
+.content_text {
+    font-size: 1.25em;
+}
+.news_title, .news_date {
+    font-size: 1.125em;
+}
+.news_text {
+     font-size: 0.9em;
+}
+.news-main_title {
+    font-size: 1.5em;
+}
+.part_title {
+    color: white;
+    background-color: #dc3545;
+    width: 16em;
+    line-height: 3em;
+    text-align: center;
+     font-family: BitterPro;
+      font-weight: 800;
+      font-size: 1.25em;
+      margin: 0 auto;
+       border-radius: 0.25em;
+}
+.part_footer {
+
+    color: white;
+    background-color: #dc3545;
+    width: 100%;
+    line-height: 2.5em;
+
+     font-family: BitterPro;
+     
+      font-size: 1.05em;
+      margin: 0 auto;
+       border-radius: 0.25em;
+}
+.news-img, .news-cont {
+  width: 50%;
+} 
+.news-card {
+  display: flex;
+}
+} 
+
+
+
+.header-main {
+    display: flex;
+    width: 100%;
+    background: #dc3545;
+}
+.header-cont {
+    justify-content: center;
+    display: flex;
+}
+
+.nav-order {
+    color: white;  
+    font-weight: 200; 
+     font-family: BitterPro;
+    border-radius: 0.25rem;
+    border: 0.07em solid white; 
+}
+.main-pic_text
+{
+    font-family: BitterPro;
+     font-weight: 800; 
+    position    : absolute;
+     text-align: center;
+     text-shadow: 1px 1px 2px black;
+   width: 100%;
+     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.main-pic {
+    position: relative;
+}
+.container-xxl {
+    padding-left: unset!important;
+    padding-right: unset!important;
+}
+.main-title {
+      font-family: BitterPro;
+     font-weight: 800;
+     text-shadow: 1px 1px 1px black;
+}
+.content_text {
+    text-align: justify;
+     font-family: BitterPro;
+}
+.news-block {
+        border: 2px solid #e1222a;
+    padding: 0.7em;
+    border-radius: 0.25em;
+    text-align: center;
+}
+.news_title, .news_date {
+     font-family: BitterPro;
+     font-weight: 800;
+     text-align: left!important;
+}
+.news_text {
+    text-align: justify;
+    font-family: BitterPro;
+    color: gray;
+}
+.news-main_title {
+      font-family: BitterPro;
+      text-align: center;
+      color: #dc3545;
+      font-weight: 800;
+}
+.o-item {
+    margin: 0 auto;
+    width: 150px;
+    height: auto;
+}
+
+/* Новости */
+.news-title{
+  font-family:'BitterPro';
+font-style: normal;
+font-weight: 800;
+font-size: 1.125em;
+line-height: 1em;
+color: #000000;
+} 
+.news-text{
+  font-family:'BitterPro';
+font-style: normal;
+font-weight: 400;
+font-size: 1em;
+line-height: 1em;
+color: #292929;
+}
+.news-link, .news-link:hover {
+  font-family: 'BitterPro';
+font-style: normal;
+font-weight: 700;
+font-size: 0.9em;
+line-height: 1em;
+color: #FF3100;
+} 
+.news-pic {
+  width: 100%;
+  height: auto;
+}
+
+
+/* Контакты  */
+
+
+.adr-title{
+font-weight: 800;
+font-size: 1.2em;
+font-family: 'BitterPro';
+}
+.adr-text {
+  font-weight: 300;
+font-size: 1em;
+font-family: 'BitterPro';  
+}
+.cnt_number, .cnt_number:hover {
+font-weight: 300;
+font-size: 1em;
+font-family: 'BitterPro';  
+text-decoration: none;
+color: black;
+}
+.contact_adress {
+    border: 2px solid #e1222a;
+    border-radius: 0.25em;
+    padding: 0.75em;
+}
+
+
+/*  Услуги   */
+
+.name-section, .name-section:hover {
+    font-weight: 800;
+font-size: 1.125em;
+font-family: 'BitterPro';  
+text-decoration: none;
+color: black;
+}
+.img-service {
+   filter: brightness(50%); 
+}
+.img-service:hover {
+   filter: brightness(100%); 
+   transition: all 0.2s ease 0.2s;
+}
+
+
+/* Партнёры */
+.card {
+      border: 0px solid #ffffff!important;
+    padding: 0.5em!important;
+      font-weight: 200;
+font-size: 1em!important;
+font-family: 'BitterPro';
+text-align: justify;
+}
+
+/* Продукция */
+
+.name-product, .name-product:hover {
+    font-weight: 800;
+font-size: 1.1em;
+font-family: 'BitterPro';  
+text-decoration: none;
+color: black;
+}
+.img-product {
+   filter: brightness(50%); 
+}
+.img-product:hover {
+   filter: brightness(100%); 
+   transition: all 0.2s ease 0.2s;
+}
+.link-product, .link-product:hover {
+font-weight: 500;
+text-decoration: none;
+font-size: 0.95em;
+font-family: 'BitterPro';  
+color: #e1222a;
+}
