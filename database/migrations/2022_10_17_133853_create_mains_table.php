@@ -15,7 +15,7 @@ class CreateMainsTable extends Migration
     {
         Schema::create('mains', function (Blueprint $table) {
             $table->id();
-            $table->text('mainPageDescription');
+            $table->text('mainPageDescription')->nullable();
             $table->timestamps();
         });
     }
