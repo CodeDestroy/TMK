@@ -18,8 +18,8 @@ class CreatePartnersTable extends Migration
             $table->string('header');
             $table->text('description');
             $table->string('img_path');
-            $table->string('img_logo_path');
-            $table->boolean('show_on_main')->default(1);
+            $table->string('img_logo_path')->nullable();
+            $table->boolean('show_on_main')->default(1)->nullable();
             $table->timestamps();
         });
     }

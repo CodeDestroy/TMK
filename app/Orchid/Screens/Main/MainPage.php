@@ -6,7 +6,6 @@ namespace App\Orchid\Screens\Main;
 
 use Illuminate\Http\Request;
 use Orchid\Screen\Actions\ModalToggle;
-use Orchid\Screen\Fields\Group;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Screen;
@@ -42,13 +41,13 @@ class MainPage extends Screen
      *
      * @return string|null
      */
-    public $name = 'Main Page';
+    public $name = 'Главная страница';
 
-    public $description = 'Main page content';
+    public $description = 'Редактирование содержимого главной страницы';
 
     public function name(): ?string
     {
-        return 'Main Page';
+        return 'Главная страница';
     }
 
     /**
@@ -59,7 +58,7 @@ class MainPage extends Screen
     public function commandBar(): iterable
     {
         return [
-                ModalToggle::make('Создать запись')->modal('createRecord')->method('create'),
+                ModalToggle::make('Создать новую запись')->modal('createRecord')->method('create'),
         ];
     }
 
@@ -80,7 +79,10 @@ class MainPage extends Screen
             Layout::modal('editRecord', Layout::rows([
                 Input::make('record.id')->type('hidden'),
                 TextArea::make('record.mainPageDescription')->required()->title("Текст")->rows(15),
-            ]))->async('asyncGetRecord')
+            ]))->async('asyncGetRecord')->closeButton('Закрыть')->applyButton('Изменить'),
+            Layout::modal('deleteRecord', Layout::rows([
+                Input::make('record.id')->type('hidden')
+            ]))->async('asyncGetRecord')->closeButton('Закрыть')->applyButton('Удалить')
         ];
     }
     public function asyncGetRecord(Main $main): array
@@ -94,6 +96,12 @@ class MainPage extends Screen
     {
         Main::find($request->input('record.id'))->update($request->record);
         Toast::info('Данные успешно изменены!');
+    }
+
+    public function delete(Request $request)
+    {
+        Main::find($request->input('record.id'))->delete($request->record);
+        Toast::info('Данные удалены!');
     }
 
     public function create(Request $request): void

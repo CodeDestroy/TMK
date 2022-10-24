@@ -8,7 +8,7 @@ use Orchid\Platform\Dashboard;
 use Orchid\Platform\ItemPermission;
 use Orchid\Platform\OrchidServiceProvider;
 use Orchid\Screen\Actions\Menu;
-use Orchid\Support\Color;
+
 
 class PlatformProvider extends OrchidServiceProvider
 {
@@ -28,12 +28,35 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
-            Menu::make('Главная страница')
+            Menu::make('Страницы сайта')
+                ->list([
+                    Menu::make('Главная страница')
+                        ->icon('home')
+                        ->route('platform.mainPage'),
+                    Menu::make('Продукция')
+                        ->icon('wrench')
+                        ->route('platform.productionPage'),
+                    Menu::make('Услуги')
+                        ->icon('docs')
+                        ->route('platform.servicesPage'),
+                    Menu::make('Новости')
+                        ->icon('note')
+                        ->route('platform.newsPage'),
+                    Menu::make('Партнеры')
+                        ->icon('people')
+                        ->route('platform.partnersPage')
+
+
+                ])->icon('globe'),
+            /*Menu::make('Главная страница')
                 ->icon('home')
                 ->route('platform.mainPage')
                 ->title('Главная страница'),
-
-            Menu::make('Example screen')
+            Menu::make('Продукция')
+                ->icon('wrench')
+                ->route('platform.productionPage')
+                ->title('Главная страница'),*/
+            /*Menu::make('Example screen')
                 ->icon('monitor')
                 ->route('platform.example')
                 ->title('Navigation')
@@ -55,7 +78,7 @@ class PlatformProvider extends OrchidServiceProvider
 
             Menu::make('Advanced Elements')
                 ->icon('briefcase')
-                ->route('platform.example.advanced'),
+                ->route('platform.example.advanced'),*/
 
            /*  Menu::make('Text Editors')
                 ->icon('list')
@@ -75,7 +98,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.example.cards')
                 ->divider(),
 
-            
+
 
             Menu::make('Changelog')
                 ->icon('shuffle')
@@ -84,17 +107,17 @@ class PlatformProvider extends OrchidServiceProvider
                 ->badge(function () {
                     return Dashboard::version();
                 }, Color::DARK()), */
-            Menu::make('Documentation')
+            Menu::make('Документация')
                 ->title('Docs')
                 ->icon('docs')
                 ->url('https://orchid.software/en/docs'),
-            Menu::make(__('Users'))
+            Menu::make(__('Пользователи'))
                 ->icon('user')
                 ->route('platform.systems.users')
                 ->permission('platform.systems.users')
                 ->title(__('Access rights')),
 
-            Menu::make(__('Roles'))
+            Menu::make(__('Роли'))
                 ->icon('lock')
                 ->route('platform.systems.roles')
                 ->permission('platform.systems.roles'),

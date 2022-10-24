@@ -17,7 +17,7 @@ class CreateProductionsTable extends Migration
             $table->id();
             $table->string('header');
             $table->text('description');
-            $table->string('img_path');
+            $table->string('img_path')->nullable();
             $table->timestamps();
         });
     }

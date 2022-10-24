@@ -33,9 +33,27 @@ use Tabuna\Breadcrumbs\Trail;
 Route::screen('/main', PlatformScreen::class)
     ->name('platform.main');
 
+
 //MainPage
 Route::screen('mainPage', App\Orchid\Screens\Main\MainPage::class)
     ->name('platform.mainPage');
+//ProductionPage
+Route::screen('productionPage', App\Orchid\Screens\Production\ProductionPage::class)
+    ->name('platform.productionPage');
+
+//ServicesPage
+Route::screen('servicesPage', App\Orchid\Screens\Services\ServicesPage::class)
+    ->name('platform.servicesPage');
+
+//NewsPage
+Route::screen('newsPage', App\Orchid\Screens\News\NewsPage::class)
+    ->name('platform.newsPage');
+
+//NewsPage
+Route::screen('partnersPage', App\Orchid\Screens\Partners\PartnersPage::class)
+    ->name('platform.partnersPage');
+
+
 // Platform > Profile
 Route::screen('profile', UserProfileScreen::class)
     ->name('platform.profile')

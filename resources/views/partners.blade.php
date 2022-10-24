@@ -16,7 +16,7 @@
 	<div class="header-main">
 		<div class="container-xl  header-cont">
 			<nav class="navbar navbar-dark navbar-expand-md bg-red">
- 
+
     <a class="navbar-brand" href="/"><img src="./source/logo1.png" class="header-logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
       <span class="navbar-toggler-icon"></span>
@@ -45,14 +45,14 @@
 			          <!-- <a class="nav-link  nav-order" href="#" style="color: white;">Оставить заявку</a> -->
 			        </li>
       </ul>
-      
+
     </div>
 
 </nav>
 		</div>
 	</div>
 	</header>
-	
+
 	<div class="container-xl  py-4">
 	@if($errors->any())
 	<div class="alert alert-danger">
@@ -66,10 +66,10 @@
 	<div class="row">
 	<div class="main-title py-4"><h2>Партнёры</h2></div>
 	@foreach($data as $el)
-	
+
 	<div  class="col-xl-4 col-lg-4 col-md-6  col-12">
  		<div class="card  m-2" >
-			<img src="source/{{ $el->img_path }}" class="card-img-top img-fluid" alt="...">
+			<img src="{{ $el->img_path }}" class="card-img-top img-fluid" alt="...">
 			<div class="card-body">
 				<p class="card-text">{{ $el->description }}</p>
 			</div>
@@ -132,7 +132,7 @@
 <footer class="part_footer">
 	<div class="container-xl row c1" style="padding-top: 1em!important;">
 		<div class="col">
-			
+
 			<ul style="list-style-type: none; ">
 				<li style="font-weight: 800;">
 					<a>Продукция</a>
@@ -164,7 +164,7 @@
 			</ul>
 			<ul style=" list-style-type: none;">
 				<li  style="font-weight: 800;">
-					<a>О компании</a>	
+					<a>О компании</a>
 				</li>
 				<li>
 					<a href="#" class="footer_li_el">Политика интегрированной системы менеджмента</a>
@@ -182,12 +182,12 @@
 					<a href="#" class="footer_li_el">Реализация остатков ТМЦ</a>
 				</li>
 			</ul>
-			
+
 		</div>
 		<div class="col">
 			<ul style=" list-style-type: none;">
 				<li  style="font-weight: 800;">
-					<a>Производство</a>		
+					<a>Производство</a>
 				</li>
 				<li>
 					<a href="#" class="footer_li_el">Масштабное производство</a>
@@ -220,7 +220,7 @@
 					<a href="#" class="footer_li_el">ТЭС "Бар" (Индия)</a>
 				</li>
 			</ul>
-			
+
 		</div>
 		<div class="col">
 			<ul style=" list-style-type: none;">
@@ -229,7 +229,7 @@
 				</li>
 				<li>
 					<a href="mailto:info@tmk-vr.ru?subject=E-mail" class="footer_li_el">E-mail: <b>info@tmk-vr.ru</b></a>
-					
+
 				</li>
 				<li class="footer_li_el">
 
@@ -287,6 +287,6 @@
 <script src="owl/owl.carousel.min.js"></script>
 <script src="owl/owl.carousel.js"></script>
 
-</body>  
+</body>
 
 

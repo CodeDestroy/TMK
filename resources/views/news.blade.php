@@ -65,7 +65,7 @@
 	<div class="row">
 	@foreach($data as $el)
 	<div class="news-card col-sm-6 py-2">
-	<div class="news-img  py-1"><img src="source/{{ $el->img_path }}" class="news-pic"></div>
+	<div class="news-img  py-1"><img src="{{ $el->img_path }}" class="news-pic"></div>
 		<div class="news-cont px-2 py-1">
 			<p class="news-title">{{ $el->header }}</p>
 			<p class="news-text">{{\Illuminate\Support\Str::limit($el->description, 100, '...') }}</p>
@@ -126,7 +126,7 @@
 <footer class="part_footer">
 	<div class="container-xl row c1" style="padding-top: 1em!important;">
 		<div class="col">
-			
+
 			<ul style="list-style-type: none; ">
 				<li style="font-weight: 800;">
 					<a>Продукция</a>
@@ -158,7 +158,7 @@
 			</ul>
 			<ul style=" list-style-type: none;">
 				<li  style="font-weight: 800;">
-					<a>О компании</a>	
+					<a>О компании</a>
 				</li>
 				<li>
 					<a href="#" class="footer_li_el">Политика интегрированной системы менеджмента</a>
@@ -176,12 +176,12 @@
 					<a href="#" class="footer_li_el">Реализация остатков ТМЦ</a>
 				</li>
 			</ul>
-			
+
 		</div>
 		<div class="col">
 			<ul style=" list-style-type: none;">
 				<li  style="font-weight: 800;">
-					<a>Производство</a>		
+					<a>Производство</a>
 				</li>
 				<li>
 					<a href="#" class="footer_li_el">Масштабное производство</a>
@@ -214,7 +214,7 @@
 					<a href="#" class="footer_li_el">ТЭС "Бар" (Индия)</a>
 				</li>
 			</ul>
-			
+
 		</div>
 		<div class="col">
 			<ul style=" list-style-type: none;">
@@ -223,7 +223,7 @@
 				</li>
 				<li>
 					<a href="mailto:info@tmk-vr.ru?subject=E-mail" class="footer_li_el">E-mail: <b>info@tmk-vr.ru</b></a>
-					
+
 				</li>
 				<li class="footer_li_el">
 
@@ -281,6 +281,6 @@
 <script src="owl/owl.carousel.min.js"></script>
 <script src="owl/owl.carousel.js"></script>
 
-</body>  
+</body>
 
 

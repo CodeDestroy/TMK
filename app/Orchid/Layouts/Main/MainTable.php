@@ -3,11 +3,12 @@
 namespace App\Orchid\Layouts\Main;
 
 use App\Models\Main;
-use http\Env\Request;
+
+use Orchid\Screen\Actions\DropDown;
 use Orchid\Screen\Actions\ModalToggle;
 use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\TD;
-
+use Orchid\Screen\Actions\Link;
 class MainTable extends Table
 {
     /**
@@ -32,15 +33,32 @@ class MainTable extends Table
             TD::make('mainPageDescription', 'Текст')->width('700px'),
             TD::make('created_at', 'Дата создания')->defaultHidden()->width('150px'),
             TD::make('updated_at', 'Дата редактирования')->defaultHidden()->width('150px'),
-            TD::make('action')->render(function (Main $main){
-                return ModalToggle::make('Редактировать')
-                    ->modal('editRecord')
-                    ->method('update')
-                    ->modalTitle('Редактирование записи id=' . $main->id)
-                    ->asyncParameters([
-                        'record' => $main->id
-                    ]);
-            })->width('50px')
+                TD::make('Actions')
+                ->render(function (Main $main) {
+                    return DropDown::make()
+                            ->icon('options-vertical')
+                            ->list([
+                                ModalToggle::make('Редактировать')
+                                    ->modal('editRecord')
+                                    ->method('update')
+                                    ->icon('pencil')
+                                    ->modalTitle('Редактирование записи с id = ' . $main->id)
+                                    ->asyncParameters([
+                                        'record' => $main->id
+                                    ]),
+                                ModalToggle::make('Удалить')
+                                    ->modal('deleteRecord')
+
+                                    ->method('delete')
+                                    ->icon('trash')
+                                    ->modalTitle('Удалить запись с id = ' . $main->id . '?')
+                                    ->asyncParameters([
+                                        'record' => $main->id
+                                    ])
+
+                        ])->align(TD::ALIGN_CENTER);
+
+                })->width('10px')->align(TD::ALIGN_CENTER)
         ];
     }
 }
