@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{--<!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
@@ -51,7 +51,14 @@
 </nav>
 		</div>
 	</div>
-	</header>
+	</header>--}}
+@extends('layout.main')
+
+@section('title-block')
+    Главная страница
+@endsection
+
+@section('content')
 	@if($errors->any())
 			<div class="alert alert-danger">
 				<ul>
@@ -74,15 +81,6 @@
          		<p class="content_text pb-2">
          			{{ $el->mainPageDescription }}
 				</p>
-         		<!-- <p class="content_text  py-2">
-         		 Выполнение строительно-монтажных работ, проектирование, создание и подключение инженерных систем.Наша команда проектирует, строит под ключ металлокаркасные промышленные объекты: с остеклением и глухие.
-         		</p>
-         			<p class="content_text pb-2">
-         			Строительная компания «ТМК» является одним из ведущих предприятий в Воронежской области. Офис расположен в г. Воронеж. География работ – центральные регионы России. По договоренности сотрудничаем с заказчиками из других федеральных округов.Основные направления деятельности ООО «ТМК»:1. Поставка строительных материалов, промышленного оборудования, электротехники, инструментов, мебели, средств дезинфекции и СИЗ, а также любых материалов, не требующих лицензирования;
-         		</p>
-         		<p class="content_text  py-2">
-         		 Выполнение строительно-монтажных работ, проектирование, создание и подключение инженерных систем.Наша команда проектирует, строит под ключ металлокаркасные промышленные объекты: с остеклением и глухие.
-         		</p> -->
 				@endforeach
          	</div>
 
@@ -116,28 +114,40 @@
 							<img src="{{$el->img_logo_path}}">
 						</div >
 				@endforeach
-         	   	<!-- <div class="o-item">
-         	   		 <img src="source/prt1.png">
-         	   	</div >
-         	   	<div class="o-item">
-         	   		 <img src="source/prt1.png">
-         	   	</div>
-         	   	<div class="o-item">
-         	   		 <img src="source/prt1.png">
-         	   	</div>
-         	   	<div class="o-item">
-         	   		 <img src="source/prt1.png">
-         	   	</div> -->
          	   </div>
          </div>
 
 
 
 </div>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+<script src="owl/owl.carousel.min.js"></script>
+<script src="owl/owl.carousel.js"></script>
+<script type="text/javascript">
 
+    $(document).ready(function() {
+        $('.carouselOne').owlCarousel({
 
+            responsive:{
+                0:{
+                    items:1
+                },
+                465:{
+                    items:2
+                },
+                768:{
+                    items:4
+                },
 
+            }
+        });
+    });
+</script>
 
+@endsection
+
+{{--
 
 <footer class="part_footer">
 	<div class="container-xl row c1" style="padding-top: 1em!important;">
@@ -319,6 +329,7 @@
 </script>
 </body>
 
+--}}
 
 
 

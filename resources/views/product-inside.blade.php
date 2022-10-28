@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{--<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -51,25 +51,28 @@
 </nav>
 		</div>
 	</div>
-	</header>
+	</header>--}}
+    @extends('layout.main')
 
-<div class="container-xl py-2">
-	 <div class="main-title py-4"><h2>Продукт</h2></div>
-		<div class="img-product py-3">
-			<a href="/products/{{ $data->id }}" style="text-decoration: none;">
-				<div class = "row">
-					<div class="col-xl-8 pic-product"><img src="{{ $data->img_path }}" class="img-fluid"></div>
-					<div class="col py-1">
-						<p class="name-product ">{{ $data->header}}</p>
-						<p class="py-1">{{ $data->description}}</p>
-					</div>
-				</div>
+    @section('content')
+        <div class="container-xl py-2">
+             <div class="main-title py-4"><h2>Продукт</h2></div>
+                <div class="img-product py-3">
+                    <a style="text-decoration: none;">
+                        <div class = "row">
+                            <div class="col-xl-8 pic-product"><img src="{{ $data->img_path }}" class="img-fluid"></div>
+                            <div class="col py-1">
+                                <p class="name-product ">{{ $data->header}}</p>
+                                <p class="py-1">{{ $data->description}}</p>
+                            </div>
+                        </div>
 
-			</a>
-		</div>
+                    </a>
+                </div>
 
-</div>
-
+        </div>
+    @endsection
+{{--
 
 <footer class="part_footer">
 	<div class="container-xl row c1" style="padding-top: 1em!important;">
@@ -231,3 +234,4 @@
 
 </body>
 
+--}}

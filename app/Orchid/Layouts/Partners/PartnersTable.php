@@ -29,11 +29,15 @@ class PartnersTable extends Table
     {
         return [
             TD::make('id', 'Id')->width('20px'),
-            TD::make('header', 'Заголовок')->width('700px'),
+            TD::make('header', 'Заголовок')->width('300px'),
             TD::make('description', 'Описание')->width('700px'),
-            TD::make('img_path', 'Картинка')->width('400px'),
-            TD::make('img_logo_path', 'Баннер')->width('400px'),
-            TD::make('show_on_main', 'Показывать баннер')->width('150px'),
+            TD::make('img_path', 'Картинка')->width('200px')->render(function (Partners $partners){
+                return "<img src=$partners->img_path width='200'>";
+            }),
+            TD::make('img_logo_path', 'Баннер')->width('150px')->render(function (Partners $partners){
+                return "<img src=$partners->img_logo_path width='150'>";
+            }),
+            TD::make('show_on_main', 'Показывать баннер')->width('50px'),
             TD::make('created_at', 'Дата создания')->defaultHidden()->width('150px'),
             TD::make('updated_at', 'Дата редактирования')->defaultHidden()->width('150px'),
             TD::make('Actions')

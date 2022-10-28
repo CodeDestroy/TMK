@@ -1,3 +1,4 @@
+{{--
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -52,24 +53,32 @@
 		</div>
 	</div>
 	</header>
+--}}
 
+@extends('layout.main')
 
+@section('title-block')
+    {{\Illuminate\Support\Str::limit($data->header, 32, '...') }}
+@endsection
 
-<div class="container-xl py-2">
-	<div class="main-title py-4"><h2>Новость</h2></div>
-	 <a href="/services/{{ $data->id }}" style="text-decoration: none;">
-				<div class = "row">
-					<div class="col-xl-8 pic-product"><img src="{{ $data->img_path }}" class="img-fluid"></div>
-					<div class="col py-1">
-						<p class="name-product ">{{ $data->header}}</p>
-						<p class="py-1">{{ $data->description}}</p>
-					</div>
-				</div>
+@section('content')
 
-			</a>
-		</div>
-</div>
+    <div class="container-xl py-2">
+        <div class="main-title py-4"><h2>Новость</h2></div>
+         <a href="/services/{{ $data->id }}" style="text-decoration: none;">
+                    <div class = "row">
+                        <div class="col-xl-8 pic-product"><img src="{{ $data->img_path }}" class="img-fluid"></div>
+                        <div class="col py-1">
+                            <p class="name-product ">{{ $data->header}}</p>
+                            <p class="py-1">{{ $data->description}}</p>
+                        </div>
+                    </div>
 
+                </a>
+            </div>
+    </div>
+@endsection
+{{--
 <footer class="part_footer">
 	<div class="container-xl row c1" style="padding-top: 1em!important;">
 		<div class="col">
@@ -228,5 +237,5 @@
 <script src="../owl/owl.carousel.min.js"></script>
 <script src="../owl/owl.carousel.js"></script>
 
-</body>
+</body>--}}
 

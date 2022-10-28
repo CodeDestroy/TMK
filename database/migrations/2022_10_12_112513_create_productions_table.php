@@ -13,13 +13,22 @@ class CreateProductionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('productions', function (Blueprint $table) {
-            $table->id();
-            $table->string('header');
-            $table->text('description');
-            $table->string('img_path')->nullable();
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('productions')){
+            Schema::create('productions', function (Blueprint $table) {
+                $table->id();
+
+                $table->string('header');
+                $table->text('description');
+                $table->string('img_path')->nullable();
+                $table->timestamps();
+
+                $table->string('production_type_id')->nullable();
+                $table->foreign('production_type_id', 'production_type_fk')->references('alias')->on('production_types');
+                //$table->index('production_type_id', 'production_type_idx');
+
+            });
+        }
+
     }
 
     /**

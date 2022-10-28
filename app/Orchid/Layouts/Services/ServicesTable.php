@@ -29,9 +29,11 @@ class ServicesTable extends Table
     {
         return [
             TD::make('id', 'Id')->width('20px'),
-            TD::make('header', 'Заголовок')->width('700px'),
+            TD::make('header', 'Заголовок')->width('300px'),
             TD::make('description', 'Описание')->width('700px'),
-            TD::make('img_path', 'Картинка')->width('700px'),
+            TD::make('img_path', 'Картинка')->width('400px')->render(function (Service $service){
+                return "<img src=$service->img_path width='400'>";
+            }),
             TD::make('created_at', 'Дата создания')->defaultHidden()->width('150px'),
             TD::make('updated_at', 'Дата редактирования')->defaultHidden()->width('150px'),
             TD::make('Actions')

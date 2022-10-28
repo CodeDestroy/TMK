@@ -36,6 +36,9 @@ class PlatformProvider extends OrchidServiceProvider
                     Menu::make('Продукция')
                         ->icon('wrench')
                         ->route('platform.productionPage'),
+                    Menu::make('Типы продукции')
+                        ->icon('task')
+                        ->route('platform.productiontypesPage'),
                     Menu::make('Услуги')
                         ->icon('docs')
                         ->route('platform.servicesPage'),
@@ -44,10 +47,22 @@ class PlatformProvider extends OrchidServiceProvider
                         ->route('platform.newsPage'),
                     Menu::make('Партнеры')
                         ->icon('people')
-                        ->route('platform.partnersPage')
+                        ->route('platform.partnersPage'),
+                    Menu::make('Контакты')
+                        ->icon('phone')
+                        ->route('platform.contactsPage'),
+                    Menu::make('Категории в футере')
+                        ->icon('layers')
+                        ->route('platform.categoriesPage'),
+                    Menu::make('Разделы в футере (подкатегории)')
+                        ->icon('list')
+                        ->route('platform.subcategoriesPage')
 
 
                 ])->icon('globe'),
+            Menu::make('Заявки')
+                ->icon('user-follow')
+                ->route('platform.submitsPage'),
             /*Menu::make('Главная страница')
                 ->icon('home')
                 ->route('platform.mainPage')
@@ -110,7 +125,7 @@ class PlatformProvider extends OrchidServiceProvider
             Menu::make('Документация')
                 ->title('Docs')
                 ->icon('docs')
-                ->url('https://orchid.software/en/docs'),
+                ->url('https://orchid.software/ru/docs'),
             Menu::make(__('Пользователи'))
                 ->icon('user')
                 ->route('platform.systems.users')

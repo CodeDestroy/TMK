@@ -6,13 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Orchid\Screen\AsSource;
 
-class Production extends Model
+class SubCategories extends Model
 {
     use AsSource;
     use HasFactory;
 
-    protected $fillable = ['header', 'description', 'img_path', 'production_type_id'];
-
-
-
+    protected $fillable = ['alias', 'name', 'text', 'parent_id'];
 }

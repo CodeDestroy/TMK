@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{--<!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
@@ -16,7 +16,7 @@
 	<div class="header-main">
 		<div class="container-xl  header-cont">
 			<nav class="navbar navbar-dark navbar-expand-md bg-red">
- 
+
     <a class="navbar-brand" href="/"><img src="./source/logo1.png" class="header-logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
       <span class="navbar-toggler-icon"></span>
@@ -45,26 +45,34 @@
 			          <!-- <a class="nav-link  nav-order" href="#" style="color: white;">Оставить заявку</a> -->
 			        </li>
       </ul>
-      
+
     </div>
 
 </nav>
 		</div>
 	</div>
 	</header>
-	
+	--}}
+@extends('layout.main')
+
+
+@section('title-block')
+    Контакты
+@endsection
+
+@section('content')
 <div class="container-xl  py-4">
 	 <div class="main-title py-4"><h2>Контакты</h2></div>
 <div class="row">
 	<div class="col-xl-4 col-md-5 col-12 py-4">
 		<div class="contact_adress">
 			  <div class="adr-title">Адрес</div>
-			  <div class="adr-text">{{$data->adress}}</div>
+			  <div class="adr-text">{{$contacts->adress}}</div>
 			  <div class="contact_number  pt-2">
-			  	<div class="cnt_number" style="font-weight:600;">Телефон:<a href="tel: +79202256666" class="cnt_number"> {{$data->phone}}</a></div> 
-			  	<div class="cnt_number" style="font-weight:600;">E-mail: <a href="mailto:info@tmk-vr.ru?subject=E-mail" class="cnt_number"> {{$data->email}}</a></div> 
+			  	<div class="cnt_number" style="font-weight:600;">Телефон:<a href="tel: +79202256666" class="cnt_number"> {{$contacts->phone}}</a></div>
+			  	<div class="cnt_number" style="font-weight:600;">E-mail: <a href="mailto:info@tmk-vr.ru?subject=E-mail" class="cnt_number"> {{$contacts->email}}</a></div>
 			  </div>
-		</div> 
+		</div>
 	</div>
 	<div class="col-xl-8 col-md-7 col-12">
 		<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A535cf51fc05188c45708d7b8594d6807080f055b1b641d6b0b6182765dc7f9ec&amp;width=100%&amp;height=433&amp;lang=ru_RU&amp;scroll=true"></script>
@@ -72,11 +80,13 @@
 
 </div>
 </div>
+@endsection
+{{--
 
 <footer class="part_footer">
 	<div class="container-xl row c1" style="padding-top: 1em!important;">
 		<div class="col">
-			
+
 			<ul style="list-style-type: none; ">
 				<li style="font-weight: 800;">
 					<a>Продукция</a>
@@ -108,7 +118,7 @@
 			</ul>
 			<ul style=" list-style-type: none;">
 				<li  style="font-weight: 800;">
-					<a>О компании</a>	
+					<a>О компании</a>
 				</li>
 				<li>
 					<a href="#" class="footer_li_el">Политика интегрированной системы менеджмента</a>
@@ -126,12 +136,12 @@
 					<a href="#" class="footer_li_el">Реализация остатков ТМЦ</a>
 				</li>
 			</ul>
-			
+
 		</div>
 		<div class="col">
 			<ul style=" list-style-type: none;">
 				<li  style="font-weight: 800;">
-					<a>Производство</a>		
+					<a>Производство</a>
 				</li>
 				<li>
 					<a href="#" class="footer_li_el">Масштабное производство</a>
@@ -164,7 +174,7 @@
 					<a href="#" class="footer_li_el">ТЭС "Бар" (Индия)</a>
 				</li>
 			</ul>
-			
+
 		</div>
 		<div class="col">
 			<ul style=" list-style-type: none;">
@@ -173,7 +183,7 @@
 				</li>
 				<li>
 					<a href="mailto:info@tmk-vr.ru?subject=E-mail" class="footer_li_el">E-mail: <b>info@tmk-vr.ru</b></a>
-					
+
 				</li>
 				<li class="footer_li_el">
 
@@ -231,6 +241,7 @@
 <script src="owl/owl.carousel.min.js"></script>
 <script src="owl/owl.carousel.js"></script>
 
-</body>  
+</body>
+--}}
 
 

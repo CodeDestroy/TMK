@@ -41,6 +41,10 @@ Route::screen('mainPage', App\Orchid\Screens\Main\MainPage::class)
 Route::screen('productionPage', App\Orchid\Screens\Production\ProductionPage::class)
     ->name('platform.productionPage');
 
+//ProductionTypesPage
+Route::screen('productiontypesPage', App\Orchid\Screens\ProductionTypes\ProductionTypesPage::class)
+    ->name('platform.productiontypesPage');
+
 //ServicesPage
 Route::screen('servicesPage', App\Orchid\Screens\Services\ServicesPage::class)
     ->name('platform.servicesPage');
@@ -49,10 +53,25 @@ Route::screen('servicesPage', App\Orchid\Screens\Services\ServicesPage::class)
 Route::screen('newsPage', App\Orchid\Screens\News\NewsPage::class)
     ->name('platform.newsPage');
 
-//NewsPage
+//PartnersPage
 Route::screen('partnersPage', App\Orchid\Screens\Partners\PartnersPage::class)
     ->name('platform.partnersPage');
 
+//ContactsPage
+Route::screen('contactsPage', App\Orchid\Screens\Contacts\ContactsPage::class)
+    ->name('platform.contactsPage');
+
+//ContactsPage
+Route::screen('submitsPage', App\Orchid\Screens\Submits\SubmitsPage::class)
+    ->name('platform.submitsPage');
+
+//CategoriesPage
+Route::screen('categoriesPage', App\Orchid\Screens\Categories\CategoriesPage::class)
+    ->name('platform.categoriesPage');
+
+//SubCategoriesPage
+Route::screen('subcategoriesPage', App\Orchid\Screens\Categories\SubCategoriesPage::class)
+    ->name('platform.subcategoriesPage');
 
 // Platform > Profile
 Route::screen('profile', UserProfileScreen::class)

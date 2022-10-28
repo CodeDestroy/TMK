@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{--<!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
@@ -51,8 +51,14 @@
 </nav>
 		</div>
 	</div>
-	</header>
+	</header>--}}
+@extends('layout.main')
 
+@section('title-block')
+Продукция
+@endsection
+
+@section('content')
 <div class="container-xl py-2">
 	@if($errors->any())
 	<div class="alert alert-danger">
@@ -67,61 +73,18 @@
 	<div class="main-title py-4"><h2>Продукция</h2></div>
 	@foreach($data as $el)
 	<div class="col-xl-4 col-lg-4  col-md-6  col-12  img-product py-3">
-		<a href="/products/{{ $el->id }}" style="text-decoration: none;">
+		<a href="/products/{{$el->production_type_id}}/{{ $el->id }}" style="text-decoration: none;">
 			<div class="pic-product"><img src="{{ $el->img_path }}" class="img-fluid"></div>
 			<div class="name-product py-1">{{ $el->header}}</div>
-			<div class="link-product"><a href="/products/{{ $el->id }}" class="link-product">Подробности</a></div>
+			<div class="link-product"><a href="/products/{{$el->production_type_id}}/{{ $el->id }}" class="link-product">Подробности</a></div>
 		</a>
 	</div>
 	@endforeach
 
-
-	<!-- <div class="col-xl-4 col-lg-4  col-md-6  col-12  img-product py-3">
-		<a href="services-inside.html" style="text-decoration: none;">
-			<div class="pic-product"><img src="source/slide.jpg" class="img-fluid  "></div>
-			<div class="name-product py-1">Политика интегрированной системы менеджмента</div>
-			<div class="link-product"><a href="product-inside.html" class="link-product">Подробности</a></div>
-		</a>
-	</div>
-	<div class="col-xl-4 col-lg-4  col-md-6  col-12  img-product py-3">
-		<a href="services-inside.html" style="text-decoration: none;">
-			<div class="pic-product"><img src="source/slide.jpg" class="img-fluid  "></div>
-			<div class="name-product py-1">Политика интегрированной системы менеджмента</div>
-			<div class="link-product"><a href="product-inside.html" class="link-product">Подробности</a></div>
-		</a>
-	</div>
-	<div class="col-xl-4 col-lg-4  col-md-6  col-12  img-product py-3">
-		<a href="services-inside.html" style="text-decoration: none;">
-			<div class="pic-product"><img src="source/slide.jpg" class="img-fluid  "></div>
-			<div class="name-product  py-1">Политика интегрированной системы менеджмента</div>
-			<div class="link-product"><a href="product-inside.html" class="link-product">Подробности</a></div>
-		</a>
-	</div>
-	<div class="col-xl-4 col-lg-4  col-md-6  col-12  img-product py-3">
-		<a href="services-inside.html" style="text-decoration: none;">
-			<div class="pic-product"><img src="source/slide.jpg" class="img-fluid  "></div>
-			<div class="name-product  py-1">Политика интегрированной системы менеджмента</div>
-			<div class="link-product"><a href="product-inside.html" class="link-product">Подробности</a></div>
-		</a>
-	</div>
-	<div class="col-xl-4 col-lg-4  col-md-6  col-12  img-product py-3">
-		<a href="services-inside.html" style="text-decoration: none;">
-			<div class="pic-product"><img src="source/slide.jpg" class="img-fluid  "></div>
-			<div class="name-product  py-1">Политика интегрированной системы менеджмента</div>
-			<div class="link-product"><a href="product-inside.html" class="link-product">Подробности</a></div>
-		</a>
-	</div>
-	<div class="col-xl-4 col-lg-4  col-md-6  col-12  img-product py-3">
-		<a href="services-inside.html" style="text-decoration: none;">
-			<div class="pic-product"><img src="source/slide.jpg" class="img-fluid  "></div>
-			<div class="name-product  py-1">Политика интегрированной системы менеджмента</div>
-			<div class="link-product"><a href="product-inside.html" class="link-product">Подробности</a></div>
-		</a>
-	</div>
-
-</div> -->
 </div>
 </div>
+@endsection
+{{--
 <footer class="part_footer">
 	<div class="container-xl row c1" style="padding-top: 1em!important;">
 		<div class="col">
@@ -282,3 +245,4 @@
 
 </body>
 
+--}}

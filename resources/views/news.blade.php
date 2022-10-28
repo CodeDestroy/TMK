@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{--<!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
@@ -48,7 +48,14 @@
 			</nav>
 		</div>
 	</div>
-	</header>
+	</header>--}}
+@extends('layout.main')
+
+@section('title-block')
+Новости
+@endsection
+
+@section('content')
 
 	<div class="container-xl">
 	@if($errors->any())
@@ -76,53 +83,10 @@
 	</div>
 	@endforeach
 
-	<!-- <div class="news-card col-sm-6 py-2">
-	<div class="news-img  py-1"><img src="./source/slide.jpg" class="news-pic"></div>
-		<div class="news-cont px-2 py-1">
-			<p class="news-title">Выполнение строительно-монтажных работ</p>
-			<p class="news-text">Выполнение строительно-монтажных работ, проектирование, создание и подключение инженерных систем.Наша команда проектирует, строит под ключ металлокаркасные промышленные объекты: с остеклением и глухие.</p>
-			<div style="text-align: right;">
-				<a href="news-inside.html" class="news-link">Читать</a>
- 			</div>
-		</div>
-	</div>
-
-	<div class="news-card col-sm-6 py-2">
-		<div class="news-img  py-1"><img src="./source/slide.jpg" class="news-pic"></div>
-		<div class="news-cont px-2 py-1">
-			<p class="news-title">Выполнение строительно-монтажных работ</p>
-			<p class="news-text">Выполнение строительно-монтажных работ, проектирование, создание и подключение инженерных систем.Наша команда проектирует, строит под ключ металлокаркасные промышленные объекты: с остеклением и глухие.</p>
-			<div style="text-align: right;">
-				<a href="news-inside.html" class="news-link">Читать</a>
-			</div>
-		</div>
-	</div>
-
-	<div class="news-card col-sm-6 py-2">
-		<div class="news-img  py-1"><img src="./source/slide.jpg" class="news-pic"></div>
-		<div class="news-cont px-2 py-1">
-			<p class="news-title">Выполнение строительно-монтажных работ</p>
-			<p class="news-text">Выполнение строительно-монтажных работ, проектирование, создание и подключение инженерных систем.Наша команда проектирует, строит под ключ металлокаркасные промышленные объекты: с остеклением и глухие.</p>
-			<div style="text-align: right;">
-				<a href="news-inside.html" class="news-link">Читать</a>
-			</div>
-		</div>
-	</div>
-
-	<div class="news-card col-sm-6 py-2">
-		<div class="news-img  py-1"><img src="./source/slide.jpg" class="news-pic"></div>
-		<div class="news-cont px-2 py-1">
-			<p class="news-title">Выполнение строительно-монтажных работ</p>
-			<p class="news-text">Выполнение строительно-монтажных работ, проектирование, создание и подключение инженерных систем.Наша команда проектирует, строит под ключ металлокаркасные промышленные объекты: с остеклением и глухие.</p>
-			<div style="text-align: right;">
-				<a href="news-inside.html" class="news-link">Читать</a>
-			</div>
-		</div>
-	</div> -->
-
-
 </div>
 </div>
+@endsection
+{{--
 <footer class="part_footer">
 	<div class="container-xl row c1" style="padding-top: 1em!important;">
 		<div class="col">
@@ -282,5 +246,6 @@
 <script src="owl/owl.carousel.js"></script>
 
 </body>
+--}}
 
 

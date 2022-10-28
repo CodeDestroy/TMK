@@ -1,5 +1,7 @@
 <?php
 
+
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\MainController@getAllInfo');
 
+
 Route::get('/services', 'App\Http\Controllers\ServicesController@getAllServices');
 Route::get('/services/{id}', 'App\Http\Controllers\ServicesController@getServicesById');
 
@@ -28,4 +31,12 @@ Route::get('/partners', 'App\Http\Controllers\PartnersController@getAllPartners'
 Route::get('/contacts', 'App\Http\Controllers\ContactsController@getAllContacts');
 
 Route::get('/products', 'App\Http\Controllers\ProductionController@getAllProducts');
-Route::get('/products/{id}', 'App\Http\Controllers\ProductionController@getProductsById');
+Route::get('/products/{product_type}', 'App\Http\Controllers\ProductionController@getAllProductsByType');
+Route::get('/products/{product_type}/{id}', 'App\Http\Controllers\ProductionController@getProductsById');
+
+//Route::get('/category/{category}', 'App\Http\Controllers\SubCategoriesController@getSubCategoryById');
+Route::get('/category/{category}/{sub_category}', 'App\Http\Controllers\SubCategoriesController@getSubCategoryById');
+
+
+
+Route::post('/submit', 'App\Http\Controllers\SubmitController@sentSebmit')->name('contact-form');

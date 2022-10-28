@@ -4,11 +4,13 @@ namespace App\Orchid\Screens\Production;
 
 
 
+use App\Models\ProductionType;
 use App\Orchid\Layouts\Production\ProductionTable;
 use Illuminate\Http\Request;
 use Orchid\Screen\Actions\ModalToggle;
 use Orchid\Screen\Fields\Cropper;
 use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Screen;
 use App\Models\Production;
@@ -72,16 +74,24 @@ class ProductionPage extends Screen
                     ->title('Large web banner image, generally in the front and center')
                     ->width(1000)
                     ->height(500)->targetRelativeUrl(),
+                Select::make('production_type_id')
+                    ->fromModel(ProductionType::class, 'type', 'alias')->required()
             ]))->title('Создать новую запись')->applyButton('Создать')->closeButton('Закрыть'),
-            Layout::modal('editRecord', Layout::rows([
-                Input::make('record.id')->type('hidden'),
-                Input::make('record.header')->required()->title('Заголовок'),
-                TextArea::make('record.description')->required()->title("Текст")->rows(15),
-                Cropper::make('record.img_path')
-                    ->title('Large web banner image, generally in the front and center')
-                    ->width(1000)
-                    ->height(500)->targetRelativeUrl(),
-            ]))->async('asyncGetRecord')->closeButton('Закрыть')->applyButton('Изменить'),
+            Layout::modal('editRecord',
+                Layout::rows([
+                    Input::make('record.id')->type('hidden'),
+                    Input::make('record.header')->required()->title('Заголовок'),
+                    TextArea::make('record.description')
+                        ->required()
+                        ->title("Текст")->rows(15),
+                    Cropper::make('record.img_path')
+                        ->title('Large web banner image, generally in the front and center')
+                        ->width(1000)
+                        ->height(500)->targetRelativeUrl(),
+                    Select::make('record.production_type_id')
+                        ->fromModel(ProductionType::class, 'type', 'alias')
+                        ->required()
+                ]))->async('asyncGetRecord')->closeButton('Закрыть')->applyButton('Изменить'),
             Layout::modal('deleteRecord', Layout::rows([
                 Input::make('record.id')->type('hidden')
             ]))->async('asyncGetRecord')->closeButton('Закрыть')->applyButton('Удалить')
@@ -97,6 +107,7 @@ class ProductionPage extends Screen
 
     public function update(Request $request)
     {
+//        dd(Production::find($request->input('record.id')));
         Production::find($request->input('record.id'))->update($request->record);
         Toast::info('Данные успешно изменены!');
     }
@@ -112,9 +123,11 @@ class ProductionPage extends Screen
         $request->validate([
             'header' => ['required'],
             'description' => ['required'],
-            'img_path' => ['required']
+            'img_path' => ['required'],
+            'production_type_id' => ['required']
         ]);
-        Production::create(['header' => $request->header, 'description' => $request->description, 'img_path'=>$request->img_path]);
+
+        Production::create(['header' => $request->header, 'description' => $request->description, 'img_path'=>$request->img_path , 'production_type_id'=>$request->production_type_id]);
         Toast::info('Запись успешно создана!');
     }
 

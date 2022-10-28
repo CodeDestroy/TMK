@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{--<!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
@@ -51,7 +51,14 @@
 </nav>
 		</div>
 	</div>
-	</header>
+	</header>--}}
+@extends('layout.main')
+
+@section('title-block')
+Услуги
+@endsection
+
+@section('content')
 	<div class="container-xl  py-4">
 	@if($errors->any())
 	<div class="alert alert-danger">
@@ -75,34 +82,10 @@
 	@endforeach
 
 
-<!--
-	<div class="col-sm-6  img-service py-3">
-		<a href="services-inside.html" style="text-decoration: none;">
-			<div class="img-section"><img src="source/slide.jpg" class="img-fluid  "></div>
-			<div class="name-section  pt-3">Политика интегрированной системы менеджмента</div>
-		</a>
-	</div>
-	<div class="col-sm-6  img-service py-3">
-		<a href="services-inside.html"  style="text-decoration: none;">
-			<div class="img-section"><img src="source/slide.jpg" class="img-fluid  "></div>
-			<div class="name-section  pt-3">Политика интегрированной системы менеджмента</div>
-		</a>
-	</div>
-<div class="col-sm-6  img-service py-3">
-		<a href="services-inside.html" style="text-decoration: none;">
-			<div class="img-section"><img src="source/slide.jpg" class="img-fluid "></div>
-			<div class="name-section  pt-3">Политика интегрированной системы менеджмента</div>
-		</a>
-	</div>
-	<div class="col-sm-6  img-service py-3">
-		<a href="services-inside.html" style="text-decoration: none;">
-			<div class="img-section"><img src="source/slide.jpg" class="img-fluid  "></div>
-			<div class="name-section  pt-3">Политика интегрированной системы менеджмента</div>
-		</a>
-	</div>
-</div> -->
-</div>
-</div>
+    </div>
+    </div>
+@endsection
+    {{--
 <footer class="part_footer">
 	<div class="container-xl row c1" style="padding-top: 1em!important;">
 		<div class="col">
@@ -264,3 +247,4 @@
 </body>
 
 
+--}}

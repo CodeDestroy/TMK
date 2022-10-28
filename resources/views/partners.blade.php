@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{--<!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
@@ -51,8 +51,15 @@
 </nav>
 		</div>
 	</div>
-	</header>
+	</header>--}}
+@extends('layout.main')
 
+@section('title-block')
+    Партнёры
+@endsection
+
+
+@section('content')
 	<div class="container-xl  py-4">
 	@if($errors->any())
 	<div class="alert alert-danger">
@@ -78,57 +85,11 @@
 
 	@endforeach
 
-<!--  	<div  class="col-xl-4 col-lg-4 col-md-6  col-12">
- 		<div class="card  m-2" >
-			<img src="./source/slide.jpg" class="card-img-top img-fluid" alt="...">
-			<div class="card-body">
-				<p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карточки.</p>
-			</div>
-		</div>
-	</div>
-<div  class="col-xl-4 col-lg-4 col-md-6  col-12">
- <div class="card  m-2" >
-  <img src="./source/slide.jpg" class="card-img-top img-fluid" alt="...">
-  <div class="card-body">
-    <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карточки.</p>
-  </div>
-  </div>
-</div>
- <div  class="col-xl-4 col-lg-4  col-md-6  col-12">
- <div class="card  m-2" >
-  <img src="./source/slide.jpg" class="card-img-top img-fluid" alt="...">
-  <div class="card-body">
-    <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карточки.</p>
-  </div>
-  </div>
-</div>
-<div  class="col-xl-4 col-lg-4 col-md-6  col-12">
- <div class="card  m-2" >
-  <img src="./source/slide.jpg" class="card-img-top img-fluid" alt="...">
-  <div class="card-body">
-    <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карточки.</p>
-  </div>
-  </div>
-</div>
- <div  class="col-xl-4 col-lg-4  col-md-6  col-12">
- <div class="card  m-2" >
-  <img src="./source/slide.jpg" class="card-img-top img-fluid" alt="...">
-  <div class="card-body">
-    <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карточки.</p>
-  </div>
-  </div>
-</div>
-<div  class="col-xl-4 col-lg-4  col-md-6  col-12">
- <div class="card  m-2" >
-  <img src="./source/slide.jpg" class="card-img-top img-fluid" alt="...">
-  <div class="card-body">
-    <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карточки.</p>
-  </div>
-  </div>
-</div> -->
 
 </div>
 </div>
+@endsection
+{{--
 <footer class="part_footer">
 	<div class="container-xl row c1" style="padding-top: 1em!important;">
 		<div class="col">
@@ -290,3 +251,4 @@
 </body>
 
 
+--}}

@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Orchid\Layouts\News;
+namespace App\Orchid\Layouts\Submits;
 
-use App\Models\News;
-use Orchid\Screen\Layouts\Table;
-use Orchid\Screen\TD;
+use App\Models\Submit;
 use Orchid\Screen\Actions\DropDown;
 use Orchid\Screen\Actions\ModalToggle;
-
-class NewsTable extends Table
+use Orchid\Screen\Layouts\Table;
+use Orchid\Screen\TD;
+use Illuminate\Http\Request;
+class SubmitsTable extends Table
 {
     /**
      * Data source.
@@ -18,7 +18,7 @@ class NewsTable extends Table
      *
      * @var string
      */
-    protected $target = 'newsPage';
+    protected $target = 'submitsPage';
 
     /**
      * Get the table cells to be displayed.
@@ -28,17 +28,18 @@ class NewsTable extends Table
     protected function columns(): iterable
     {
         return [
-            TD::make('id', 'Id')->width('20px'),
-            TD::make('header', 'Заголовок')->width('200px'),
-            TD::make('description', 'Описание')->width('600px'),
-            TD::make('date', 'Дата')->width('150px'),
-            TD::make('img_path', 'Картинка')->width('400px')->render(function (News $news){
-                return "<img src=$news->img_path width='400'>";
+            TD::make('id', 'Id')->width('20px')->sort(),
+            TD::make('name', 'Имя')->width('180px')->filter(TD::FILTER_TEXT)->sort(),
+            TD::make('email', 'E-mail')->width('250px')->filter(TD::FILTER_TEXT)->sort(),
+            TD::make('phone', 'Телефон')->width('200px')->filter(TD::FILTER_TEXT)->sort(),
+            TD::make('description', 'Заметки')->width('600px')->filter(TD::FILTER_TEXT)->sort(),
+            TD::make('checked', 'Обработана')->width('150px')->filter(TD::FILTER_TEXT)->sort()->render(function (Submit $submit){
+                return $submit->checked === '1' ? 'Обработана' : 'Не обработана';
             }),
-            TD::make('created_at', 'Дата создания')->defaultHidden()->width('150px'),
+            TD::make('created_at', 'Дата создания')->width('150px')->filter(TD::FILTER_TEXT)->sort(),
             TD::make('updated_at', 'Дата редактирования')->defaultHidden()->width('150px'),
             TD::make('Actions')
-                ->render(function (News $news) {
+                ->render(function (Submit $submit) {
                     return DropDown::make()
                         ->icon('options-vertical')
                         ->list([
@@ -46,18 +47,18 @@ class NewsTable extends Table
                                 ->modal('editRecord')
                                 ->method('update')
                                 ->icon('pencil')
-                                ->modalTitle('Редактирование записи с id = ' . $news->id)
+                                ->modalTitle('Редактирование записи с id = ' . $submit->id)
                                 ->asyncParameters([
-                                    'record' => $news->id
+                                    'record' => $submit->id
                                 ]),
                             ModalToggle::make('Удалить')
                                 ->modal('deleteRecord')
 
                                 ->method('delete')
                                 ->icon('trash')
-                                ->modalTitle('Удалить запись с id = ' . $news->id . '?')
+                                ->modalTitle('Удалить запись с id = ' . $submit->id . '?')
                                 ->asyncParameters([
-                                    'record' => $news->id
+                                    'record' => $submit->id
                                 ])
 
                         ]);

@@ -3,6 +3,7 @@
 namespace App\Orchid\Layouts\Production;
 
 use App\Models\Production;
+use App\Models\ProductionType;
 use Orchid\Screen\Actions\DropDown;
 use Orchid\Screen\Actions\ModalToggle;
 use Orchid\Screen\Layouts\Table;
@@ -31,7 +32,13 @@ class ProductionTable extends Table
             TD::make('id', 'Id')->width('20px'),
             TD::make('header', 'Заголовок')->width('700px'),
             TD::make('description', 'Описание')->width('700px'),
-            TD::make('img_path', 'Картинка')->width('700px'),
+            TD::make('img_path', 'Картинка')->width('400px')->render(function (Production $production){
+                return "<img src=$production->img_path width='400'>";
+            }),
+            TD::make('production_type_id', 'Тип продукции')->render(function (Production $production){
+
+                return ProductionType::where('alias', $production->production_type_id)->get()[0]->type;
+            }),
             TD::make('created_at', 'Дата создания')->defaultHidden()->width('150px'),
             TD::make('updated_at', 'Дата редактирования')->defaultHidden()->width('150px'),
             TD::make('Actions')
